@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const lenis = new Lenis({
   duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -8 * t)),
   smooth: true,
 });
 
@@ -106,6 +106,7 @@ window.addEventListener('load', () => {
       const conceptTitle = document.querySelector('.p-concept__title');
       if (conceptTitle) {
         observeCharReveal(conceptTitle, { stagger: 0.04 });
+        gsap.set(conceptTitle, { opacity: 1 });
       }
     },
   });
@@ -216,6 +217,25 @@ function observeCharReveal(el, options = {}) {
   observer.observe(el);
 }
 
+const conceptText = document.querySelector('.p-concept__text');
+if (conceptText) {
+  const textObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        gsap.to(conceptText, {
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+        });
+        textObserver.unobserve(entry.target);
+      });
+    },
+    { rootMargin: '-20% 0px' },
+  );
+  textObserver.observe(conceptText);
+}
+
 document.querySelectorAll('.c-title__en').forEach((el) => {
   observeCharReveal(el, { stagger: 0.08 });
 });
@@ -226,9 +246,9 @@ if (window.matchMedia('(min-width: 769px)').matches) {
   document.querySelectorAll('.p-value__item-image img').forEach((img) => {
     gsap.fromTo(
       img,
-      { yPercent: -20 },
+      { yPercent: -5 },
       {
-        yPercent: 20,
+        yPercent: 5,
         ease: 'none',
         scrollTrigger: {
           trigger: img.closest('.p-value__item'),
@@ -245,7 +265,7 @@ if (window.matchMedia('(min-width: 769px)').matches) {
       img,
       { yPercent: 0, scale: 1.3 },
       {
-        yPercent: 15,
+        yPercent: 8,
         scale: 1.3,
         ease: 'none',
         scrollTrigger: {
