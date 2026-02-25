@@ -537,11 +537,17 @@ body input {
 .l-header__logo a:hover {
   opacity: 0.7;
 }
+.l-header__logo img {
+  transition: filter 0.3s;
+}
 @media screen and (max-width: 767px) {
   .l-header__logo img {
     width: 11.527rem;
     height: 3.522rem;
   }
+}
+.l-header.is-scrolled .l-header__logo img {
+  filter: brightness(0.3);
 }
 
 .l-header__inner {
@@ -877,6 +883,28 @@ body input {
   bottom: auto;
   top: 50%;
   transform: rotate(-45deg);
+}
+
+.c-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  cursor: pointer;
+}
+.c-lightbox.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.c-lightbox img {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
 }
 
 .p-hero {
@@ -1549,6 +1577,7 @@ body input {
 .p-room__item-gallery-main img {
   width: 100%;
   height: auto;
+  transition: opacity 0.3s;
 }
 
 .p-room__item-gallery-thumbs {
@@ -2927,7 +2956,7 @@ body input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("/dist/images/common/contact.jpg") center/cover no-repeat;
+  background: url("../images/common/contact.jpg") center/cover no-repeat;
   text-align: center;
 }
 @media screen and (max-width: 767px) {

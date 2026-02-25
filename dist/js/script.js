@@ -60,6 +60,71 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+/* ギャラリー サムネイル切り替え */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const galleries = document.querySelectorAll('.p-room__item-gallery');
+  if (!galleries.length) return;
+
+  galleries.forEach((gallery) => {
+    const mainImg = gallery.querySelector('.p-room__item-gallery-main img');
+    const thumbs = gallery.querySelectorAll('.p-room__item-gallery-thumbs img');
+    if (!mainImg || !thumbs.length) return;
+
+    thumbs.forEach((thumb) => {
+      thumb.style.cursor = 'pointer';
+      thumb.addEventListener('click', () => {
+        if (mainImg.src === thumb.src) return;
+        mainImg.style.opacity = '0';
+        setTimeout(() => {
+          mainImg.src = thumb.src;
+          mainImg.alt = thumb.alt;
+          mainImg.style.opacity = '1';
+        }, 300);
+      });
+    });
+  });
+});
+
+/* ヘッダー スクロール切り替え */
+
+gsap.ticker.add(() => {
+  const header = document.querySelector('.l-header');
+  if (!header) return;
+
+  if (window.scrollY > 100) {
+    header.classList.add('is-scrolled');
+  } else {
+    header.classList.remove('is-scrolled');
+  }
+});
+
+/* 間取り図 画像拡大 */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const planImages = document.querySelectorAll('.p-room__item-plan img');
+  if (!planImages.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.classList.add('c-lightbox');
+  const enlargedImg = document.createElement('img');
+  overlay.appendChild(enlargedImg);
+  document.body.appendChild(overlay);
+
+  planImages.forEach((img) => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => {
+      enlargedImg.src = img.src;
+      enlargedImg.alt = img.alt;
+      overlay.classList.add('is-active');
+    });
+  });
+
+  overlay.addEventListener('click', () => {
+    overlay.classList.remove('is-active');
+  });
+});
+
 /* Lenis スムーススクロール */
 
 const lenis = new Lenis({
