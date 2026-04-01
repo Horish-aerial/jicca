@@ -38,6 +38,14 @@
 </head>
 
 <body>
+  <script>
+    (function() {
+      var pass = prompt('パスワードを入力してください');
+      if (pass !== 'jicca2026') {
+        document.documentElement.innerHTML = '<html><head><title>Access Denied</title></head><body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:#fff;"><p style="font-size:18px;color:#333;">アクセスが拒否されました。</p></body></html>';
+      }
+    })();
+  </script>
 
   <!-- ============= l-header ============= -->
   <header class="l-header">
