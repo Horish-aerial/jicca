@@ -1765,6 +1765,12 @@ body input {
   border-radius: 50%;
   object-fit: cover;
 }
+@media screen and (max-width: 767px) {
+  .p-voice__card-avatar {
+    width: 8.8rem;
+    height: 8.8rem;
+  }
+}
 
 .p-voice__card-attr {
   font-size: 1.4rem;
