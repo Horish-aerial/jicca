@@ -47,6 +47,7 @@
 
 <body>
   <!-- TODO: 本番公開時にこのscriptブロックを削除する -->
+  <!--
   <script>
     (function() {
       var pass = prompt('パスワードを入力してください');
@@ -55,6 +56,7 @@
       }
     })();
   </script>
+  -->
 
   <!-- ============= l-header ============= -->
   <header class="l-header">
@@ -294,7 +296,7 @@
                 <span class="p-stay__item-time">16:00</span>
                 <h4 class="p-stay__item-title">カウンセリング</h4>
                 <p class="p-stay__item-text">
-                  荷物を整えたら、<br>ゆっくりお話を伺います。<br>「どう休みたいか」「何を身につけたいか」<br>など、滞在の希望を聞かせてください。<br><small>※チェックイン日の18:00以降はいつでも赤ちゃんをお預けいただけます。</small></p>
+                  荷物を整えたら、ゆっくりお話を伺います。<br>「どう休みたいか」「何を身につけたいか」<br>など、滞在の希望を聞かせてください。<br><small>※チェックイン日の18:00以降はいつでも赤ちゃんをお預けいただけます。</small></p>
               </div>
 
               <div class="p-stay__item">
@@ -303,8 +305,7 @@
                 </div>
                 <span class="p-stay__item-time">17:00</span>
                 <h4 class="p-stay__item-title">くつろぎの時間</h4>
-                <p class="p-stay__item-text">好きなペースでお過ごしください。事前予約制のカウンセリング<br
-                    class="u-br-pc--tab">ルームにはお茶とお菓子をご用意しています。<br>各お部屋ではネット映画もお楽しみいただけます。
+                <p class="p-stay__item-text">好きなペースでお過ごしください。事前予約制のカウンセリングルームにはお茶とお菓子をご用意しています。<br>各お部屋ではネット映画もお楽しみいただけます。
                 </p>
               </div>
 
@@ -325,7 +326,7 @@
                 <span class="p-stay__item-time">22:00</span>
                 <h4 class="p-stay__item-title">就寝</h4>
                 <p class="p-stay__item-text">
-                  お風呂に入って、ゆっくりお休みください。<br>就寝時は、ご希望に応じて赤ちゃんもお預かりします。夜間も助産師が常駐しているので、<br>安心して休息が取れます。</p>
+                  お風呂に入って、ゆっくりお休みください。<br>就寝時は、ご希望に応じて赤ちゃんもお預かりします。夜間も助産師が常駐しているので、安心して休息が取れます。</p>
               </div>
             </div>
             <!-- /.p-stay__list -->
@@ -908,6 +909,7 @@
                   <li class="p-facility__check-item">母乳保存用パック（必要時提供）</li>
                   <li class="p-facility__check-item">体温計（ケア時のみ貸出）</li>
                   <li class="p-facility__check-item">血圧計（ケア時のみ貸出）</li>
+                  <li class="p-facility__check-item">加湿器（貸出あり）</li>
                 </ul>
               </div>
 
@@ -920,13 +922,13 @@
                   <li class="p-facility__check-item">消毒セット（貸出あり）</li>
                   <li class="p-facility__check-item">オムツ（新生児用〜Mサイズ）</li>
                   <li class="p-facility__check-item">おしりふき</li>
-                  <li class="p-facility__check-item">ベビー服</li>
+                  <li class="p-facility__check-item">ベビー服（50〜80cm）</li>
                   <li class="p-facility__check-item">ガーゼハンカチ</li>
                   <li class="p-facility__check-item">おくるみ</li>
                   <li class="p-facility__check-item">見守りセンサー</li>
                   <li class="p-facility__check-item">ベビーバス・ベビーマット（貸出あり）</li>
-                  <li class="p-facility__check-item">ベビー用ボディーソープ</li>
-                  <li class="p-facility__check-item">ベビー用スキンケア</li>
+                  <li class="p-facility__check-item">ベビー用泡石鹸（貸出あり）</li>
+                  <li class="p-facility__check-item">ベビー用スキンケア ※1</li>
                   <li class="p-facility__check-item">ベビー用綿棒</li>
                   <li class="p-facility__check-item">ベビー用ブラシ（貸出あり）</li>
                   <li class="p-facility__check-item">ベビー用爪切り（ケア時のみ貸出）</li>
@@ -943,7 +945,7 @@
                   class="p-facility__bracket">〉</span></h3>
 
               <ul class="p-facility__check-list">
-                <li class="p-facility__check-item p-facility__check-item--wide">ママ、赤ちゃんなどご家族分の健康保険証</li>
+                <li class="p-facility__check-item p-facility__check-item--wide">ママ、赤ちゃんなどご家族分のマイナンバーカード</li>
                 <li class="p-facility__check-item">母子手帳</li>
                 <li class="p-facility__check-item">こども医療証（あれば）</li>
                 <li class="p-facility__check-item">服用中のお薬</li>
@@ -1058,10 +1060,10 @@
 
           <div class="p-price__room-footer">
             <p>※全室禁煙</p>
-            <p>※毎日15:00利用開始/翌日11:00利用終了</p>
+            <p>※チェックイン 15:00〜16:00 / チェックアウト〜11:00</p>
             <p>※部屋タイプにより費用が変動します</p>
             <p>※表示価格は全て税込です</p>
-            <p>※各部屋最大収容人数はお子様1名＋大人2名です。双子様のご利用の場合は、「DELUXE C：ゆったりステイ」のみご対応可能かつ、お二人目様のケア料等といたしまして税込22,000/泊が発生いたします</p>
+            <p>※各部屋最大収容人数はお子様1名＋大人2名です。双子様のご利用の場合は、「DELUXE C：ゆったりステイ」のみご対応可能かつ、お二人目様のケア料等といたしまして税込22,000円/泊が発生いたします</p>
           </div>
         </div>
 
@@ -1124,7 +1126,7 @@
           <div class="p-price__cancel-section">
             <h4 class="p-price__cancel-heading">②ご予約後に日程変更をされる場合</h4>
             <div class="p-price__cancel-text">
-              <p>・日程変更は、原則として「変更前の日程のキャンセル＋変更後の日程の新規予約」として扱います。</p>
+              <p>・日程変更は、原則として変更前の日程をキャンセルの上、新たな日程で改めてご予約ください。</p>
               <p>・母子の健康状態が理由の場合は免除措置があります。（診断書提出必須）</p>
               <p>・変更先の日程は空室状況によりご希望に沿えない場合があります。</p>
             </div>
