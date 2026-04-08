@@ -71,6 +71,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbs = gallery.querySelectorAll('.p-room__item-gallery-thumbs img');
     if (!mainImg || !thumbs.length) return;
 
+    const originalSrc = mainImg.src;
+    const originalAlt = mainImg.alt;
+
+    // メイン画像クリックで元に戻る
+    mainImg.style.cursor = 'pointer';
+    mainImg.addEventListener('click', () => {
+      if (mainImg.src === originalSrc) return;
+      mainImg.style.opacity = '0';
+      setTimeout(() => {
+        mainImg.src = originalSrc;
+        mainImg.alt = originalAlt;
+        mainImg.style.opacity = '1';
+      }, 300);
+    });
+
     thumbs.forEach((thumb) => {
       thumb.style.cursor = 'pointer';
       thumb.addEventListener('click', () => {
